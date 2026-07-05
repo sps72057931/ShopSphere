@@ -1,4 +1,10 @@
 const mongoose = require("mongoose");
+const dns = require("dns");
+
+// Force Node to use public DNS resolvers that support SRV lookups.
+// Fixes "querySrv ECONNREFUSED" errors on networks/routers whose default
+// DNS doesn't resolve mongodb+srv:// records properly.
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 const connectDB = async () => {
   try {
