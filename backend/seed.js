@@ -74,7 +74,7 @@ const sampleProducts = [
     brand: "ChefPro",
     stock: 25,
     featured: false,
-    images: [{ url: "https://images.unsplash.com/photo-1584990347449-a5d9f800a783?w=600", public_id: "sample5" }],
+    images: [{ url: "https://images.pexels.com/photos/28726706/pexels-photo-28726706.jpeg?auto=compress&cs=tinysrgb&w=600", public_id: "sample5" }],
     ratings: 4.4,
     numReviews: 40,
   },
