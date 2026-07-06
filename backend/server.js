@@ -31,6 +31,13 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "OK", message: "ShopSphere API is running" });
 });
 
+// Visiting the backend directly wakes the server (Render free tier spins down
+// when idle) and redirects to the live frontend.
+app.get("/", (req, res) => {
+  const frontendUrl = process.env.CLIENT_URL || "http://localhost:5173";
+  res.redirect(frontendUrl);
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/orders", orderRoutes);
